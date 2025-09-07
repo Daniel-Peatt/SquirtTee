@@ -1,0 +1,68 @@
+.plaque-container {
+    width: 250px;
+    height: 75px;
+    border-radius: 12px;
+    background: url("../../assets/gold.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+    color: rgba(255, 229, 163, 0.85);
+    font-weight: bold;
+    font-family: 'Cinzel', serif;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+    box-shadow: 
+        0 6px 12px rgba(0,0,0,0.7), /* outer shadow for depth */
+        inset 0 2px 6px rgba(0,0,0,0.4); /* inner shadow for engraved feel */
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    text-align: center;
+    font-size:medium;
+}
+
+/* Hover: subtle lift and highlight */
+.plaque-container:hover {
+    transform: translateY(-3px);
+    box-shadow: 
+        0 10px 20px rgba(0,0,0,0.8),
+        inset 0 2px 8px rgba(0,0,0,0.5);
+}
+
+/* Optional reflective shine overlay */
+.plaque-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: linear-gradient(145deg, rgba(255,255,255,0.2), rgba(255,255,255,0));
+    pointer-events: none;
+}
+
+/* Nails */
+.plaque-nail {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    margin: 0 10px;
+    background: url("../../assets/nail.jpg");
+    background-size: cover;
+    background-position: center;
+    box-shadow: 1px 1px 6px rgba(0,0,0,0.7); /* deeper nail shadow */
+}
+
+/* Optional engraved text effect inside plaque */
+.plaque-text {
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7), -1px -1px 2px rgba(255,255,255,0.15);
+}
+
+@media (max-width: 768px) {
+ .plaque-container {
+    margin-top: 50px;
+ }
+}

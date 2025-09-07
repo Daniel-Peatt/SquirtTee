@@ -1,0 +1,63 @@
+.score-container {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem auto;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.95rem;
+  background: #1e1e2f; /* Dark background for contrast */
+  color: #f5f5f5;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+}
+
+.score-container thead {
+  background: linear-gradient(135deg, #54e24a, #356d29);
+  color: white;
+}
+
+.score-container th,
+.score-container td {
+  padding: 0.25rem .5rem;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.score-container th:first-child,
+.score-container td:first-child {
+  text-align: left;
+  font-weight: bold;
+}
+
+.score-container tbody tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.score-container tbody tr:hover {
+  background: rgba(74, 144, 226, 0.2);
+  transition: background 0.2s ease-in-out;
+}
+
+/* Highlight the total column */
+.score-container td:last-child,
+.score-container th:last-child {
+  font-weight: bold;
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffd700; /* gold highlight */
+}
+
+/* Responsive scroll for smaller screens */
+@media (max-width: 768px) {
+  .score-container {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    border-radius: 0px;
+  }
+
+  .score-container table,
+  .score-container {
+    min-width: 400px; /* 👈 set how wide you want the table */
+  }
+}
