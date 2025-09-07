@@ -17,11 +17,15 @@ function App() {
     const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
+  if (document.readyState === "complete") {
+    // Page already loaded
+    setLoaded(true);
+  } else {
     const handleLoad = () => setLoaded(true);
     window.addEventListener("load", handleLoad);
-
     return () => window.removeEventListener("load", handleLoad);
-  }, []);
+  }
+}, []);
 
   const palmRef = useRef(null);
   const ncRef = useRef(null);
