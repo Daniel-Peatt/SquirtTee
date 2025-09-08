@@ -103,7 +103,7 @@ html {
   height: 60%;
   display: flex;
   justify-content: center;
-  align-items: baseline;
+  align-items: flex-start;
 }
 
 .con{
